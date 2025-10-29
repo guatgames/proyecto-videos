@@ -12,29 +12,45 @@ tag.async = true;
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+var players = [];
+var ids = ["Hur6-RNIsQ4","SXxp4QDxh4c"];
 var player;
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player("video", {
-    height: "480",
-    width: "270",
-    videoId: "M7lc1UVf-VE",
-    playerVars: {
-      playsinline: 1,
-      origin: "https://guatgames.github.io",
-      enablejaspi: 1,
-    },
-    events: {
-      onReady: onPlayerReady,
-      //onStateChange: onPlayerStateChange,
-    },
-  });
+  
+  ids.forEach((id, index) => {
+    player = new YT.Player("video" + (index+1), {
+      height: "270",
+      width: "480",
+      videoId: id,
+      playerVars: {
+        'playsinline': 1,
+        'origin': 'http://127.0.0.1:5500',
+        'enablejaspi': 1,
+      },
+      events: {
+        'onReady': onPlayerReady,
+        //onStateChange: onPlayerStateChange,
+      },
+    });
+
+    players.push(player);
+});
+
 }
-onYouTubeIframeAPIReady();
+
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-  event.target.playVideo();
+  //event.target.playVideo();
+  console.log("Player ready");
 }
+
+const pauseAll = () => {
+  players.forEach((player) => {
+    player.pauseVideo();
+  });
+}
+
 
 let current = 1; // card centrada
 
@@ -67,13 +83,13 @@ function updateCarousel() {
 next.addEventListener("click", () => {
   current = (current + 1) % cards.length;
   updateCarousel();
-  //pauseAll();
+  pauseAll();
 });
 
 prev.addEventListener("click", () => {
   current = (current - 1 + cards.length) % cards.length;
   updateCarousel();
-  //pauseAll();
+  pauseAll();
 });
 
 updateCarousel();

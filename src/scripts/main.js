@@ -4,18 +4,34 @@ const prev = document.querySelector(".prev");
 const playButtons = document.querySelectorAll(".play__btn");
 const videoFrames = document.querySelectorAll("iframe");
 
-const players = [];
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+tag.async = true;
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
 
 function onYouTubeIframeAPIReady() {
-  document.querySelectorAll(".youtube-video").forEach((iframe) => {
-    players.push(new YT.Player(iframe.id));
+  player = new YT.Player("video", {
+    height: "480",
+    width: "270",
+    videoId: "M7lc1UVf-VE",
+    playerVars: {
+      playsinline: 1,
+    },
+    events: {
+      onReady: onPlayerReady,
+      //onStateChange: onPlayerStateChange,
+    },
   });
 }
-
-function pauseAll() {
-  players.forEach((p) => console.log(p.getVideoUrl()));
-  players.forEach((p) => p.pauseVideo());
-  players.forEach((p) => p.stopVideo());
+onYouTubeIframeAPIReady();
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  event.target.playVideo();
 }
 
 let current = 1; // card centrada
@@ -49,13 +65,13 @@ function updateCarousel() {
 next.addEventListener("click", () => {
   current = (current + 1) % cards.length;
   updateCarousel();
-  pauseAll();
+  //pauseAll();
 });
 
 prev.addEventListener("click", () => {
   current = (current - 1 + cards.length) % cards.length;
   updateCarousel();
-  pauseAll();
+  //pauseAll();
 });
 
 updateCarousel();

@@ -7,7 +7,7 @@ const videoFrames = document.querySelectorAll("iframe");
 const players = [];
 
 function onYouTubeIframeAPIReady() {
-  document.querySelectorAll("iframe").forEach((iframe) => {
+  document.querySelectorAll(".youtube-video").forEach((iframe) => {
     players.push(new YT.Player(iframe.id));
   });
 }

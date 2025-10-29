@@ -25,7 +25,7 @@ function onYouTubeIframeAPIReady() {
       videoId: id,
       playerlets: {
         'playsinline': 1,
-        'origin': 'http://127.0.0.1:5500',
+        'origin': 'https://guatgames.github.io',
         'enablejaspi': 1,
       },
       events: {

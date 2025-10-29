@@ -1,128 +1,79 @@
 :root {
-      --bg-dark: #0a192f;
-      --card-border: #64ffda;
-      --text-light: #e6f1ff;
-      --accent: #64ffda;
-    }
+  --bg-dark: #0a192f;
+  --card-border: #64ffda;
+  --text-light: #e6f1ff;
+  --accent: #64ffda;
+}
 
-    body {
-      background-color: var(--bg-dark);
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-    }
+body {
+  background-color: var(--bg-dark);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 
-    .carousel {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 1000px;
-      height: 450px;
-      perspective: 1200px;
-    }
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  height: 450px;
+  perspective: 1200px;
+}
 
-    .video__card {
-      position: absolute;
-      width: 480px;
-      height: 270px;
-      border: 2px solid var(--card-border);
-      border-radius: 12px;
-      overflow: hidden;
-      background-color: rgba(10, 25, 47, 0.8);
-      box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
-      cursor: pointer;
-    }
+.video__card {
+  position: absolute;
+  width: 480px;
+  height: 270px;
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(10, 25, 47, 0.8);
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
+  cursor: pointer;
+}
 
-    .video__card:hover {
-        transform: translateY(-5px) scale(1.03);
-        box-shadow: 0 0 25px rgba(100, 255, 218, 0.4);
-    }
+.video__card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 25px rgba(100, 255, 218, 0.4);
+}
 
-    .video__img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.9);
-    }
 
-    .video__info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
-      color: var(--text-light);
-    }
 
-    .video__info_title {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
+/* ======== NAVEGACIÓN ======== */
+.nav__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  z-index: 10;
+}
 
-    .video__info_duration {
-      margin-top: 4px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
+.nav__btn:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+}
 
-    .play__btn {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 45px;
-      height: 45px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
-    }
-
-    .play__btn::before {
-      content: "▶";
-      color: #0a192f;
-      font-size: 1.2rem;
-      margin-left: 3px;
-    }
-
-    /* ======== NAVEGACIÓN ======== */
-    .nav__btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      font-size: 1.5rem;
-      cursor: pointer;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      z-index: 10;
-    }
-
-    .nav__btn:hover {
-      background-color: var(--accent);
-      color: var(--bg-dark);
-      box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
-    }
-
-    .prev { left: 10%; }
-    .next { right: 10%; }
+.prev { left: 10%; }
+.next { right: 10%; }

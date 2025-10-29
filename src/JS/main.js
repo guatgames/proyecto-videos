@@ -5,16 +5,16 @@ const playButtons = document.querySelectorAll(".play__btn");
 const videoFrames = document.querySelectorAll("iframe");
 
 // 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement("script");
+let tag = document.createElement("script");
 
 tag.src = "https://www.youtube.com/iframe_api";
 tag.async = true;
-var firstScriptTag = document.getElementsByTagName("script")[0];
+let firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var players = [];
-var ids = ["Hur6-RNIsQ4","SXxp4QDxh4c"];
-var player;
+let players = [];
+let ids = ["Hur6-RNIsQ4","SXxp4QDxh4c"];
+let player;
 
 function onYouTubeIframeAPIReady() {
   
@@ -23,7 +23,7 @@ function onYouTubeIframeAPIReady() {
       height: "270",
       width: "480",
       videoId: id,
-      playerVars: {
+      playerlets: {
         'playsinline': 1,
         'origin': 'http://127.0.0.1:5500',
         'enablejaspi': 1,
@@ -50,7 +50,6 @@ const pauseAll = () => {
     player.pauseVideo();
   });
 }
-
 
 let current = 1; // card centrada
 

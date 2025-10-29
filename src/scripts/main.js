@@ -7,7 +7,7 @@ const videoFrames = document.querySelectorAll("iframe");
 const players = [];
 
 function onYouTubeIframeAPIReady() {
-  document.querySelectorAll("iframe.youtube-player").forEach((iframe) => {
+  document.querySelectorAll("iframe").forEach((iframe) => {
     players.push(new YT.Player(iframe.id));
   });
 }
@@ -46,7 +46,6 @@ function updateCarousel() {
 
 next.addEventListener("click", () => {
   current = (current + 1) % cards.length;
-  console.log(videoFrames.length);
   updateCarousel();
   pauseAll();
 });

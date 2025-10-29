@@ -13,6 +13,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function pauseAll() {
+  players.forEach((p) => console.log(p.getVideoUrl()));
   players.forEach((p) => p.pauseVideo());
   players.forEach((p) => p.stopVideo());
 }

@@ -14,6 +14,7 @@ function onYouTubeIframeAPIReady() {
 
 function pauseAll() {
   players.forEach((p) => p.pauseVideo());
+  players.forEach((p) => p.stopVideo());
 }
 
 let current = 1; // card centrada

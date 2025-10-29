@@ -21,6 +21,8 @@ function onYouTubeIframeAPIReady() {
     videoId: "M7lc1UVf-VE",
     playerVars: {
       playsinline: 1,
+      origin: "https://guatgames.github.io",
+      enablejaspi: 1,
     },
     events: {
       onReady: onPlayerReady,

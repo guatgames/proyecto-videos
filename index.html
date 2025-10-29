@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Carrusel de Videos</title>
   <link rel="stylesheet" href="./src/CSS/style.css" />
 </head>
 <body>
-  <div class="carousel">
+
+  <header>
+    <h3 class="title">Orientadores</h3>
+  </header>
+  <section class="carousel">
     <button class="nav__btn prev">←</button>
     <article class="video__card">
       <div id="video1"></div>
@@ -25,7 +32,7 @@
       <div id="video5"></div>
     </article>
     <button class="nav__btn next">→</button>
-  </div>
+  </section>
   <script src="./src/JS/main.js"></script>
 </body>
 </html>

@@ -1,13 +1,28 @@
 :root {
-  --bg-dark: #0a192f;
-  --card-border: #64ffda;
+  --bg-dark: #04132a;
+  --card-border: #E6F9FF;
   --text-light: #e6f1ff;
-  --accent: #64ffda;
+  --accent: #E6E8FF;
+}
+
+@font-face {
+  font-family: "San Francisco DB";
+  src: url("../Fonts/System\ San\ Francisco\ Display\ Bold.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "San Francisco DR";
+  src: url("../Fonts/System\ San\ Francisco\ Display\ Regular.ttf.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: "San Francisco TB";
+  src: url("../Fonts/System\ San\ Francisco\ Text\ BoldItalic.ttf")  format("truetype");
 }
 
 body {
   background-color: var(--bg-dark);
-  font-family: "Poppins", sans-serif;
+  font-family: "San Francisco DB", "San Francisco DR", "San Francisco TB", "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +30,11 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+.title {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-size: 3rem;
 }
 
 .carousel {
@@ -36,7 +56,7 @@ body {
   border-radius: 12px;
   overflow: hidden;
   background-color: rgba(10, 25, 47, 0.8);
-  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+  box-shadow: 0 0 15px rgba(22, 27, 26, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
   cursor: pointer;
@@ -44,7 +64,7 @@ body {
 
 .video__card:hover {
     transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 0 25px rgba(100, 255, 218, 0.4);
+    box-shadow: 0 0 25px rgba(32, 35, 34, 0.4);
 }
 
 
@@ -56,8 +76,9 @@ body {
   transform: translateY(-50%);
   background: none;
   border: 2px solid var(--accent);
+  background-color: #353333;
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   width: 45px;
   height: 45px;

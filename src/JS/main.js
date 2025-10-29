@@ -16,6 +16,7 @@ let players = [];
 let ids = ["Hur6-RNIsQ4","SXxp4QDxh4c"];
 let player;
 
+
 function onYouTubeIframeAPIReady() {
   
   ids.forEach((id, index) => {
@@ -60,7 +61,7 @@ function updateCarousel() {
       card.style.transform = "translateX(0) scale(1.1)";
       card.style.zIndex = 3;
       card.style.opacity = "1";
-      card.style.boxShadow = "0 0 25px rgba(100,255,218,0.6)";
+      card.style.boxShadow = "0 0 25px #E6F9FF";
     } else if (offset === -1) {
       card.style.transform = "translateX(-250px) rotateY(25deg) scale(0.9)";
       card.style.zIndex = 2;
